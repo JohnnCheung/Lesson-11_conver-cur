@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="money" placeholder="Nhập số tiền"></td>
+                <td>
+                    <select id="currency1">
+                        <option value="23000">VND</option>
+                        <option value="1">USD</option>
+                        <option value="0.95">EUR</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="currency2">
+                        <option value="23000">VND</option>
+                        <option value="1">USD</option>
+                        <option value="0.95">EUR</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <p id="result" style="display: inline;">0</p>
+        <br>
+        <button onclick="convert()">Convert</button>
+    </form>
+    <script>
+        function convert() {
+            let currency1 = document.getElementById("currency1").value;
+            let currency2 = document.getElementById("currency2").value;
+            let a = document.getElementById("money").value;
+
+            result = a * currency2 / currency1;
+
+            document.getElementById("result").innerText = result;
+
+        }
+    </script>
+</body>
+
+</html>
